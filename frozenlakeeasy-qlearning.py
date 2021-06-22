@@ -52,6 +52,9 @@ class qlearning:
         good=False
         observation = env.reset()
         for i in range(16):
+            #os.system('cls')
+            #time.sleep(0.1)
+            #env.render()
             action=np.argmax(self.Q_s_a[observation])
             observation, reward, done, info = env.step(action)
             if(done and observation==15):
@@ -94,7 +97,6 @@ for i_episode in range(100):
         
         #time.sleep(0.1)
 env.close()
-env.render()
 
 Q = rl.getQ()
 print(Q)
